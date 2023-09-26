@@ -1,0 +1,205 @@
+/*Global Settings and Color */
+* {
+  background-color: antiquewhite;
+  margin: 0px;
+}
+
+main * {
+  padding: 5px;
+}
+
+/* Setting the font size for each section */
+h1 {
+  font-size: 24pt;
+  font-style: oblique;
+  font-family: Mooli;
+}
+
+.section-title,
+h2 {
+  font-size: 20pt;
+  font-style: oblique;
+  font-family: Mooli;
+}
+
+h3 {
+  font-size: 18pt;
+  font-style: oblique;
+  font-family: Mooli;
+}
+
+p {
+  font-size: 12pt;
+  font-style: normal;
+  font-family: Roboto-Mono;
+}
+
+/* Styling NavBar */
+.navbar {
+  background-color: azure;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: zoomOut 1s linear 0s 1 normal none;
+}
+
+.navbar * {
+  background-color: azure;
+  font-family: Intel-One-Mono;
+  color: black;
+  padding: 15px;
+  transition: all 0.5s linear;
+}
+
+.navbar a {
+  font-size: 32px;
+  text-decoration: none;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  list-style: none;
+}
+
+.nav-list a {
+  margin: 10px 10px 10px 10px;
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.navbar a:hover,
+#submit-button:hover {
+  border-style: hidden;
+  background-color: #e1ebe4;
+  border-width: 10px;
+}
+
+.navbar a:active,
+download_resume:active,
+#submit-button:active {
+  font-size: 200%;
+}
+
+/*Tittle Screen */
+
+main h1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  animation: zoomOut 1s ease-in-out 0s 1 normal none;
+}
+
+/*About HomePage Index.html*/
+
+.About {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.About .About-Image {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  list-style: none;
+  animation: slideInLeft 1s linear 0s 1 normal none;
+}
+
+.About .About-text {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  list-style: none;
+  animation: slideInRight 1s linear 0s 1 normal none;
+}
+
+/* Slide up pages */
+.resume *,
+#portfolio * {
+  animation: slideUp 2s linear 0s 1 normal none;
+}
+
+/* Downloading Resume */
+#download_resume {
+  display: flex;
+  justify-content: center;
+  transition: all 0.5s linear;
+}
+
+/*Indenting Each Entry */
+.entry * {
+  margin-left: 10px;
+}
+
+/* More indentation for info inside each entry */
+.entry ul li,
+.entry .entry-info,
+.entry .entry-description {
+  margin-left: 30px;
+  padding: 10px;
+}
+
+/* Contact Page */
+
+.contact-form {
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+}
+
+#submit-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-style: dashed;
+  border-bottom: 2px;
+}
+
+/*Annimation */
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(-500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(500px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(0%);
+  }
+
+  100% {
+    transform: scale(100%);
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(-300px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}

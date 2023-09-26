@@ -2,13 +2,14 @@
 <html>
   <head>
     <title>Brian Kwong's Resume</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <nav class="navbar">
       <h1 class="logo">
         <a href="index.html"> Brian Kwong </a>
       </h1>
-      <ul>
+      <ul class="nav-list">
         <li><a href="index.html">HOME</a></li>
         <li><a href="blog.html">BLOG</a></li>
         <li><a href="resume.html">RESUME</a></li>
@@ -18,7 +19,7 @@
     </nav>
     <main>
       <h1 class="page-title">Brian Kwong's Resume</h1>
-      <a href="Brian Kwong Resume.pdf" download >Download Resume</a>
+      <a href="Brian Kwong Resume.pdf" id="download_resume" download> <img src="pdf.png" alt="PDF-Icon" width="20" height="20"/>Download Resume</a>
       <div class="resume">
         <section>
           <h2 class="section-title">Education</h2>
@@ -30,27 +31,29 @@
           <h2 class="section-title">Coursework</h2>
           <div class="entry">
             <h3 class="entry-title">California Polytechnic State University</h3>
-              <p class="entry-info"></p> Courses taken or currently taking at Cal Poly
-              <ul class="course-list"></ul>
+              <p class="entry-info">Courses taken or currently taking at Cal Poly</p>
+              <ul class="course-list">
               <li>Date Structures and Algorithms</li>
               <li>Object Oriented Development and Design</li>
               <li>Computer Organization</li>
               <li>Discrete Structures</li>
               <li>Systems Programing</li>
+              </ul>
           </div>
           <div class="entry">
             <h3 class="entry-title">CodePath</h3>
-              <p class="entry-info"></p> Courses taken or currently taking at CodePath
-              <ul class="course-list"></ul>
+              <p class="entry-info">Courses taken or currently taking at CodePath</p> 
+              <ul class="course-list">
               <li>Introduction to iOS Development</li>
+              </ul>
           </div>
         </section>
         <section>
           <h2 class="section-title">Skills</h2>
           <div class="entry">
             <h3 class="entry-title">Computer Science Skills</h3>
-              <p class="entry-info"></p> Skills related to Computer Science
-              <ul class="skills-list"></ul>
+              <p class="entry-info">Skills related to Computer Science</p> 
+              <ul class="skills-list">
               <li>Python</li>
               <li>Java</li>
               <li>C</li>
@@ -58,29 +61,31 @@
               <li>HTML5</li>
               <li>Linux</li>
               <li>Microsoft Excel</li>
+              </ul>
           </div>
           <div class="entry">
             <h3 class="entry-title">Soft Skills</h3>
-              <p class="entry-info"></p> General soft and useful skills
-              <ul class="skills-list"></ul>
+              <p class="entry-info">General soft and useful skills</p> 
+              <ul class="skills-list">
               <li>Strong communication</li>
               <li>Leadership</li>
               <li>Creative Problem Solving</li>
+              </ul>
           </div>
         </section><
         <section>
           <h2 class="section-title">Projects</h2>
           <div class="entry">
             <h3 class="entry-title"> My Personal Website</h3>
-              <p class="entry-info"><a href="index.html">Link to website</a></p>
-              <p class="entry-description"></p>Created a website using HTML5 and CSS following a tutorial by Hack4Impact Commited mutiple times using Git CLI
+              <a href=index.html class="entry-info">Link to website</a>
+              <p class="entry-description">Created a website using HTML5 and CSS following a tutorial by Hack4Impact Commited mutiple times using Git CLI </p>
           </div>
         </section>
         <section>
           <h2 class="section-title">Experience</h2>
           <div class="entry">
             <h3 class="entry-title">Boys and Girls Club of West San Gabriel Valley</h3>
-              <p class="entry-info"></p>Junior Staff and Assistant Teacher
+              <p class="entry-info">Junior Staff and Assistant Teacher</p>
               <p class="entry-description"> A 120-hour internship where I helped tutor students, run fun engaging programs, and lead creatively designed activities.  Additionally, I organized inventory and helped host events at the nearby park for the local community</p>
           </div>
         </section>
