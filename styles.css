@@ -206,7 +206,7 @@ footer {
 
 /*Bug fix for mobile devices not displaying logo correctly */
 
-@media screen and (max-width: 800px) {
+@media screen and ((max-width: 800px) or (orientation: portrait) or (aspect-ratio: 9/16)) {
   .logo a {
     padding: 0px;
   }
