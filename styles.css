@@ -205,6 +205,7 @@ footer {
 }
 
 /*Bug fix for mobile devices not displaying logo correctly */
+
 @media screen and (max-width: 800px) {
   .logo a {
     padding: 0px;
