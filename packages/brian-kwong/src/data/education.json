@@ -1,0 +1,35 @@
+[
+    {
+        "institution": "California Polytechnic State University, SLO",
+        "from": "Sep 2022",
+        "to": "Jun 2025",
+        "degree": "B.S.",
+        "fieldOfStudy": "Computer Science",
+        "gpa": 3.83,
+        "keyCourses": [
+            "CSC 307 Software Engineering",
+            "CSC 402,405,406 SE Capstone",
+            "CPE 464 Computer Networking",
+            "CSC 484 User Interface & Experience Design",
+            "CSC 349 Design & Analysis of Algorithms",
+            "CSC 453 Operating Systems"
+        ],
+        "icon": "Code"
+    },
+    {
+        "institution": "CodePath Academy",
+        "from": "September 2022",
+        "to": "December 2022",
+        "degree": "Certificate",
+        "fieldOfStudy": "iOS Development",
+        "gpa": 4.0,
+        "keyCourses": [
+            "UI Kit",
+            "Core Data",
+            "Swift Foundations",
+            "XCode and Storyboard",
+            "External iOS Development Libraries"
+        ],
+        "icon": "Mobile"
+    }
+]

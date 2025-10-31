@@ -1,0 +1,69 @@
+.educationCard {
+    background-color: var(--primary-contrast-color-2);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    box-sizing: border-box;
+}
+
+.educationHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.educationHeader h2 {
+    margin: 0;
+}
+
+.educationHeader .leftSection {
+    text-align: left;
+}
+
+.educationHeader .rightSection {
+    text-align: end
+}
+
+.educationHeader .hstack {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+
+.educationIcon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    font-size: 4rem;
+}
+
+.educationBody {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .educationBody {
+        justify-content: center;
+    }
+
+    .educationHeader .hstack {
+        flex-direction: column;
+        gap: 0.25rem;
+        margin: 1rem 0;
+    }    
+
+    .educationHeader p {
+        margin: 0;
+        padding: 0;
+    }
+}

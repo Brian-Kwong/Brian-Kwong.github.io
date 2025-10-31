@@ -1,0 +1,43 @@
+.button-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color-3);
+}
+
+span.button-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.selected {
+    background-color: var(--button-select-bg-color);
+}
+
+.selected span {
+    animation: select-in 0.1s ease-in forwards;
+}
+
+@keyframes select-in {
+    0% {
+        width: 0%;
+        opacity: 0;
+    }
+    25% {
+        width: 25%;
+        opacity: 0.25;
+    }
+    50% {
+        width: 50%;
+        opacity: 0.5;
+    }
+    75% {
+        width: 75%;
+        opacity: 0.75;
+    }
+    100% {
+        width: 100%;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,17 @@
+.tag {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--primary-contrast-color-3);
+    color: var(--primary-color-2);
+    padding: 0.25em 0.75em;
+    border-radius: 20px;
+    width: fit-content;
+    gap: 1rem;
+}
+
+.tagText {
+    vertical-align: middle;
+    font-size: 1rem;
+}

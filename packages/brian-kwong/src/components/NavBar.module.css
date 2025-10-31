@@ -1,0 +1,27 @@
+.navbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    width: 100%;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: var(--primary-contrast-color-blur);
+    backdrop-filter: blur(10px);
+}
+
+.icon {
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        justify-content: center;
+    }
+}
