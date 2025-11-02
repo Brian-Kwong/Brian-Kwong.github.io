@@ -21,9 +21,6 @@ jobs:
         - name: Install Dependencies
           run: npm install
           working-directory: ./packages/brian-kwong-express-sl
-        - name: Build Backend
-          run: npm run build
-          working-directory: ./packages/brian-kwong-express-sl
         - name: serverless deploy
           uses: serverless/github-action@v4.0.0
           with:
