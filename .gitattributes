@@ -1,0 +1,13 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+*.js linguist-generated=true
+
+*.ts linguist-language=TypeScript
+*.tsx linguist-language=TypeScript
+*.json linguist-language=JSON
+*.html linguist-language=HTML
+*.css linguist-language=CSS
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.md linguist-language=Markdown
