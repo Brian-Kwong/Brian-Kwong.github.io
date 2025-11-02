@@ -1,106 +1,45 @@
-<!--
-title: 'Serverless Framework Node Express API on AWS'
-description: 'This template demonstrates how to develop and deploy a simple Node Express API running on AWS Lambda using the traditional Serverless Framework.'
-layout: Doc
-framework: v3
-platform: AWS
-language: nodeJS
-priority: 1
-authorLink: 'https://github.com/serverless'
-authorName: 'Serverless, inc.'
-authorAvatar: 'https://avatars1.githubusercontent.com/u/13742415?s=200&v=4'
--->
+This package contains the source code for the backend API using Express.js and Serverless Framework hosted on AWS Lambda.
 
-# Serverless Framework Node Express API on AWS
+> [!NOTE]
+> Endpoints are protected via CORS. Ensure that requests originate from the github.io domain. For local testing, use a tool like Postman or curl to simulate requests, or override the Origin header in the Express.js CORS configuration. DO NOT disable CORS in production.
 
-This template demonstrates how to develop and deploy a simple Node Express API service running on AWS Lambda using the traditional Serverless Framework.
+## Setup
 
-## Anatomy of the template
+If you wish to run the backend locally, follow these steps:
 
-This template configures a single function, `api`, which is responsible for handling all incoming requests thanks to the `httpApi` event. To learn more about `httpApi` event configuration options, please refer to [httpApi event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/). As the event is configured in a way to accept all incoming requests, `express` framework is responsible for routing and handling requests internally. Implementation takes advantage of `serverless-http` package, which allows you to wrap existing `express` applications. To learn more about `serverless-http`, please refer to corresponding [GitHub repository](https://github.com/dougmoscrop/serverless-http).
+1. Clone the repository:
 
-## Usage
-
-### Deployment
-
-Install dependencies with:
-
+```bash
+git clone https://github.com/Brian-Kwong/Brian-Kwong.github.io.git
 ```
+
+2. Navigate to the backend package directory:
+
+```bash
+cd Brian-Kwong.github.io/packages/brian-kwong-express-sl
+```
+3. Install dependencies:
+
+```bash
 npm install
 ```
-
-and then deploy with:
-
-```
-serverless deploy
-```
-
-After running deploy, you should see output similar to:
+4. Start the server:
 
 ```bash
-Deploying aws-node-express-api-project to stage dev (us-east-1)
-
-✔ Service deployed to stack aws-node-express-api-project-dev (196s)
-
-endpoint: ANY - https://xxxxxxxxxx.execute-api.us-east-1.amazonaws.com
-functions:
-  api: aws-node-express-api-project-dev-api (766 kB)
+npm start
 ```
 
-_Note_: In current form, after deployment, your API is public and can be invoked by anyone. For production deployments, you might want to configure an authorizer. For details on how to do that, refer to [`httpApi` event docs](https://www.serverless.com/framework/docs/providers/aws/events/http-api/).
+The server will be running at `http://localhost:3000`.
 
-### Invocation
+## Deployment
 
-After successful deployment, you can call the created application via HTTP:
+Changes are automatically deployed to AWS Lambda via GitHub Actions on push to the main branch.
+
+You can manually deploy using the Serverless Framework:
+
+> [!NOTE]
+> Ensure you have the Serverless Framework installed and configured with your AWS credentials. By default, deployments target the `us-east-1` region.
 
 ```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/
+npx serverless deploy
 ```
-
-Which should result in the following response:
-
-```
-{"message":"Hello from root!"}
-```
-
-Calling the `/hello` path with:
-
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/hello
-```
-
-Should result in the following response:
-
-```bash
-{"message":"Hello from path!"}
-```
-
-If you try to invoke a path or method that does not have a configured handler, e.g. with:
-
-```bash
-curl https://xxxxxxx.execute-api.us-east-1.amazonaws.com/nonexistent
-```
-
-You should receive the following response:
-
-```bash
-{"error":"Not Found"}
-```
-
-### Local development
-
-It is also possible to emulate API Gateway and Lambda locally by using `serverless-offline` plugin. In order to do that, execute the following command:
-
-```bash
-serverless plugin install -n serverless-offline
-```
-
-It will add the `serverless-offline` plugin to `devDependencies` in `package.json` file as well as will add it to `plugins` in `serverless.yml`.
-
-After installation, you can start local emulation with:
-
-```
-serverless offline
-```
-
-To learn more about the capabilities of `serverless-offline`, please refer to its [GitHub repository](https://github.com/dherault/serverless-offline).
