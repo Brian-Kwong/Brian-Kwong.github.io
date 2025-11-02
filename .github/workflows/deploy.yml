@@ -17,16 +17,16 @@ jobs:
     steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
-        - name: "Change directory"
-          run: cd ./packages/brian-kwong
         - name: Set up Node.js
           uses: actions/setup-node@v3
           with:
             node-version: '20.x'
         - name: Install Dependencies
           run: npm install
+          working-directory: ./packages/brian-kwong
         - name: Build Website
           run: npm run build
+          working-directory: ./packages/brian-kwong
         - name: Deploy to GitHub Pages
           id: deploy-to-github-pages
           uses: peaceiris/actions-gh-pages@v3
