@@ -17,6 +17,8 @@ jobs:
     steps:
         - name: Checkout Repository
           uses: actions/checkout@v4
+        - name: "Change directory"
+          run: cd ./packages/brian-kwong
         - name: Set up Node.js
           uses: actions/setup-node@v3
           with:
@@ -30,4 +32,4 @@ jobs:
           uses: peaceiris/actions-gh-pages@v3
           with:
             github_token: ${{ secrets.GITHUB_TOKEN }}
-            publish_dir: ./dist
+            publish_dir: ./packages/brian-kwong/dist
