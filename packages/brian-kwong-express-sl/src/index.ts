@@ -1,6 +1,7 @@
 import serverless from "serverless-http";
 import express from "express";
 import dotenv from "dotenv";
+import cors from "cors";
 import { Ollama } from "ollama";
 import nodemailer from "nodemailer";
 
@@ -12,6 +13,12 @@ import projectsData from "./data/projects.json";
 dotenv.config();
 const app = express();
 let ollama;
+const corsOptions = {
+  origin: "https://brian-kwong.github.io",
+  optionsSuccessStatus: 200,
+};
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions));
 app.use(express.json());
 
 app.post("/post-contact-form", async (req, res, next) => {
