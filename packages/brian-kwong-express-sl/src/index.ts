@@ -1,0 +1,114 @@
+import serverless from "serverless-http";
+import express from "express";
+import dotenv from "dotenv";
+import { Ollama } from "ollama";
+import nodemailer from "nodemailer";
+
+// Local Data from JSON files
+import educationData from "./data/education.json";
+import experienceData from "./data/experience.json";
+import projectsData from "./data/projects.json";
+
+dotenv.config();
+const app = express();
+let ollama;
+app.use(express.json());
+
+app.post("/post-contact-form", async (req, res, next) => {
+  const { name, email, message } = req.body;
+
+  if (!name || !email || !message) {
+    return res
+      .status(400)
+      .json({ error: "One or more fields are not provided." });
+  }
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    return res.status(400).json({ error: "Invalid email format." });
+  }
+
+  try {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_APP_TOKEN,
+      },
+    });
+
+    const mailOptions = {
+      from: process.env.EMAIL,
+      to: process.env.FORWARDING_EMAIL,
+      subject: `New Message from ${name} via Brian's Website Contact Form`,
+      text:
+        `You have received a new message from your website contact form.\n\n` +
+        `Name: ${name}\n\n` +
+        `Email: ${email}\n\n` +
+        `Message: ${message}`,
+    };
+
+    await transporter.sendMail(mailOptions);
+    return res.status(200).json({ message: "Message sent successfully." });
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return res.status(500).json({ error: "Failed to send message." });
+  }
+});
+
+app.post("/website-agent-chat", async (req, res, next) => {
+  const userMessage = req.body.message;
+  const previousMessages = req.body.previousMessages || [];
+
+  const prompt = `You are a Meowy, a helpful website assistant for Brian's personal website here to help visitors learn more about Brian.
+  Please use the following pieces of information and the resources below ONLY to answer the question passed in by the website visitor.
+
+  Education: ${JSON.stringify(educationData, null, 2)}
+  Experience: ${JSON.stringify(experienceData, null, 2)}
+  Projects: ${JSON.stringify(projectsData, null, 2)}
+
+  Brian's GitHub: https://github.com/brian-kwong
+  Brian's LinkedIn: https://www.linkedin.com/in/brian-kwong-b68215249/
+  Brian's CV: https://docs.google.com/document/d/e/2PACX-1vT6OxWUNzKvtRH-A8SNSrDIoWuUuCc9IMv52fH6pUIcahuFGFkYD3SUlz9x9ls1RN2_k0GuA13G20oh/pub
+
+  User's Question: ${userMessage}
+
+  You may also utilize previous messages in the conversation to provide context where relevant.
+  
+  Previous Conversation Context:
+  ${previousMessages.length > 0 ? JSON.stringify(previousMessages, null, 2) : "No previous conversation history."}
+  
+  When responding, you MUST adhere to the following guidelines:
+  You are free to follow any links provided on the websites provided to gather further context if needed but DO NOT use any other information and under NO CIRCUMSTANCES should you make up results that are not explicitly stated in the provided resources.
+  If you are unable to answer a question, error on the side of caution and indicate that you do not know the answer rather than implying an piece of information. 
+  If the question provided is not relevant to Brian or his website, or if you are unable to find the answer using the provided resources, politely return the following response: "I'm sorry, but I am unable to assist with that question. Please rephrase your question or try using the contact form to reach out instead. Thank you for understanding."
+  Please answer in a concise, professional, and friendly demeanor.
+
+  You do not need to introduce yourself as Meowy or repeat the question. Simply provide the answer as if you were having a casual conversation with the website visitor.
+
+  Thank you!
+  `;
+
+  const message = await ollama.chat({
+    model: "llama3.2:latest",
+    messages: [{ role: "user", content: prompt }],
+  });
+  return res.status(200).json({
+    message: message.message.content,
+  });
+});
+
+app.use((req, res, next) => {
+  return res.status(404).json({
+    error: "The requested resource was not found.",
+  });
+});
+
+const server = serverless(app);
+
+export const handler = async (event: any, context: any) => {
+  ollama = new Ollama({
+    host: process.env.CHAT_BOT_API_URL || "http://localhost:11434",
+  });
+  context.callbackWaitsForEmptyEventLoop = false;
+  return server(event, context);
+};
