@@ -1,68 +1,68 @@
 [
-  {
-    "title": "Class Search",
-    "description": "While functional and easy for administrators, Oracle's PeopleSoft, the ubiquitous course search and registration system across many universities and organizations, may not be the most user-friendly application for students to search and discover their campus courses.  Enhance your course registration process with ClassSearch, an interactive desktop application that brings the power of the university data with the user experience of a modern web application.  ClassSearch provides numerous searching parameters and a direct connection with PolyRatings, allowing for informed data-driven class enrollment decisions, all built upon standard contemporary web technologies.",
-    "tags": ["Electron", "React", "Chakra UI", "NodeJS"],
-    "imageDirection": "landscape",
-    "actions": [
-      {
-        "icon": "Microsoft",
-        "text": "Microsoft Store",
-        "link": "https://brian-kwong.github.io/ClassSearch/install.html#:~:text=ClassSearch%22%20in%20the%20search%20bar%20or%20click-,here,-to%20go%20directly%20head%20to%20the%20app%27s"
-      },
-      {
-        "icon": "Apple",
-        "text": "Mac App Store",
-        "link": "https://apps.apple.com/us/app/cp-class-search/id6754364563?mt=12"
-      },
-      {
-        "icon": "GitHub",
-        "text": "GitHub",
-        "link": "https://github.com/Brian-Kwong/ClassSearch"
-      }
-    ]
-  },
-  {
-    "title": "JLTG Tag Calculator",
-    "description": "Inspired by a niche for trains and one of my favorite shows, Jet Lag (The Game) by Wendover, JLTG-Tag Calculator helps those playing this transit-oriented game find routes based on their current game budget. Using trusted mapping platforms,  view each step of your run in detail, both in a digestible card format and an interactive map. Or, instead, if you prefer to play unorthodoxly, use our live departures board to make the next rat mode move to jukes the chasers in the wrong direction.",
-    "tags": [
-      "SwiftUI",
-      "MapKit",
-      "CoreLocation",
-      "Google & HERE Locations",
-      "Firebase Functions"
-    ],
-    "imageDirection": "portrait",
-    "actions": [
-      {
-        "icon": "Apple",
-        "text": "App Store",
-        "link": "https://apps.apple.com/us/app/jltg-tag-calc/id6754299252JLTG-Tag-Calc"
-      },
-      {
-        "icon": "GitHub",
-        "text": "GitHub",
-        "link": "https://github.com/Brian-Kwong/JLTG-Tag-Calculator"
-      }
-    ]
-  },
-  {
-    "title": "TabbyTab",
-    "description": "Organize your tabs automagically with our cute mascot and Chrome extension Tabby. Sort by either name relevance or a private, locally trained AI model, Tabby makes your tab collection habit fun and efficient across all Chromium-based browsers.",
-    "tags": [
-      "Chrome Developers APIs",
-      "K Means Clustering",
-      "Python Flask",
-      "AWS Serverless Computing",
-      "HTML/CSS/JS"
-    ],
-    "numberOfImages": 1,
-    "actions": [
-      {
-        "icon": "GitHub",
-        "text": "GitHub",
-        "link": "https://github.com/Brian-Kwong/Tabby"
-      }
-    ]
-  }
+    {
+        "title": "Class Search",
+        "description": "While functional and easy for administrators, Oracle's PeopleSoft, the ubiquitous course search and registration system across many universities and organizations, may not be the most user-friendly application for students to search and discover their campus courses.  Enhance your course registration process with ClassSearch, an interactive desktop application that brings the power of the university data with the user experience of a modern web application.  ClassSearch provides numerous searching parameters and a direct connection with PolyRatings, allowing for informed data-driven class enrollment decisions, all built upon standard contemporary web technologies.",
+        "tags": ["Electron", "React", "Chakra UI", "NodeJS"],
+        "imageDirection": "landscape",
+        "actions": [
+            {
+                "icon": "Microsoft",
+                "text": "Microsoft Store",
+                "link": "https://brian-kwong.github.io/ClassSearch/install.html#:~:text=ClassSearch%22%20in%20the%20search%20bar%20or%20click-,here,-to%20go%20directly%20head%20to%20the%20app%27s"
+            },
+            {
+                "icon": "Apple",
+                "text": "Mac App Store",
+                "link": "https://apps.apple.com/us/app/cp-class-search/id6754364563?mt=12"
+            },
+            {
+                "icon": "GitHub",
+                "text": "GitHub",
+                "link": "https://github.com/Brian-Kwong/ClassSearch"
+            }
+        ]
+    },
+    {
+        "title": "JLTG Tag Calculator",
+        "description": "Inspired by a niche for trains and one of my favorite shows, Jet Lag (The Game) by Wendover, JLTG-Tag Calculator helps those playing this transit-oriented game find routes based on their current game budget. Using trusted mapping platforms,  view each step of your run in detail, both in a digestible card format and an interactive map. Or, instead, if you prefer to play unorthodoxly, use our live departures board to make the next rat mode move to jukes the chasers in the wrong direction.",
+        "tags": [
+            "SwiftUI",
+            "MapKit",
+            "CoreLocation",
+            "Google & HERE Locations",
+            "Firebase Functions"
+        ],
+        "imageDirection": "portrait",
+        "actions": [
+            {
+                "icon": "Apple",
+                "text": "App Store",
+                "link": "https://apps.apple.com/us/app/jltg-tag-calc/id6754299252JLTG-Tag-Calc"
+            },
+            {
+                "icon": "GitHub",
+                "text": "GitHub",
+                "link": "https://github.com/Brian-Kwong/JLTG-Tag-Calculator"
+            }
+        ]
+    },
+    {
+        "title": "TabbyTab",
+        "description": "Organize your tabs automagically with our cute mascot and Chrome extension Tabby. Sort by either name relevance or a private, locally trained AI model, Tabby makes your tab collection habit fun and efficient across all Chromium-based browsers.",
+        "tags": [
+            "Chrome Developers APIs",
+            "K Means Clustering",
+            "Python Flask",
+            "AWS Serverless Computing",
+            "HTML/CSS/JS"
+        ],
+        "numberOfImages": 1,
+        "actions": [
+            {
+                "icon": "GitHub",
+                "text": "GitHub",
+                "link": "https://github.com/Brian-Kwong/Tabby"
+            }
+        ]
+    }
 ]

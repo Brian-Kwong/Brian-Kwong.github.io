@@ -2,82 +2,96 @@ import React from "react";
 
 import "../components/Components.css";
 import Button from "../components/Button";
-import Input from "../components/Input";
+import ContactForm from "../components/ContactForm";
+import ChatBot from "../components/ChatBot";
 
 import styles from "./ContactMe.module.css";
 
+import { IoIosArrowBack } from "react-icons/io";
 import { MdOutlineMail } from "react-icons/md";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
-
-import Toast from "../components/Toast";
-
-import { CiCircleCheck } from "react-icons/ci";
+import { FaEnvelopeOpenText } from "react-icons/fa";
+import { AiFillStar } from "react-icons/ai";
 
 const ContactMe: React.FC = () => {
-    const [name, setName] = React.useState("");
-    const [email, setEmail] = React.useState("");
-    const [message, setMessage] = React.useState("");
-
-    const [showToast, setShowToast] = React.useState(false);
+    const [contactMethod, setContactMethod] = React.useState<
+        "form" | "chatbot" | "undecided"
+    >("undecided");
 
     return (
         <div className="sectionContainer">
             <div className={styles.contactMeSection + " vstack"}>
-                <h1>Contact Me</h1>
-                <div className={styles.linksContainer}>
-                    <Button
-                        text="Email"
-                        icon={<MdOutlineMail className={styles.icon} />}
-                        onClick={() =>
-                            (window.location.href =
-                                "mailto:your.email@example.com")
-                        }
-                    />
-                    <Button
-                        text="LinkedIn"
-                        icon={<FaLinkedin className={styles.icon} />}
-                        onClick={() =>
-                            window.open(
-                                "https://www.linkedin.com/in/yourprofile",
-                                "_blank"
-                            )
-                        }
-                    />
-                    <Button
-                        text="GitHub"
-                        icon={<FaGithub className={styles.icon} />}
-                        onClick={() =>
-                            window.open(
-                                "https://github.com/yourprofile",
-                                "_blank"
-                            )
-                        }
-                    />
-                </div>
-                <div className={styles.formContainer}>
-                    <Input
-                        label="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <Input
-                        label="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <Input
-                        label="Message"
-                        value={message}
-                        type="multiline"
-                        onChange={(e) => setMessage(e.target.value)}
-                    />
-                </div>
-                <div className={styles.submitButton}>
-                    <Button text="Submit" showText={true} onClick={() => setShowToast(true)} />
-                </div>
+                {contactMethod === "undecided" && (
+                    <>
+                        <h1>Contact Me</h1>
+                        <div className={styles.linksContainer}>
+                            <Button
+                                text="Email"
+                                icon={<MdOutlineMail className={styles.icon} />}
+                                onClick={() =>
+                                    (window.location.href =
+                                        "mailto:your.email@example.com")
+                                }
+                            />
+                            <Button
+                                text="LinkedIn"
+                                icon={<FaLinkedin className={styles.icon} />}
+                                onClick={() =>
+                                    window.open(
+                                        "https://www.linkedin.com/in/yourprofile",
+                                        "_blank"
+                                    )
+                                }
+                            />
+                            <Button
+                                text="GitHub"
+                                icon={<FaGithub className={styles.icon} />}
+                                onClick={() =>
+                                    window.open(
+                                        "https://github.com/yourprofile",
+                                        "_blank"
+                                    )
+                                }
+                            />
+                        </div>
+                    </>
+                )}
+                {contactMethod !== "undecided" && (
+                    <div className={styles.backButtonSection}>
+                        <Button
+                            icon={<IoIosArrowBack className={styles.icon} />}
+                            onClick={() => setContactMethod("undecided")}
+                        />
+                        <h3>
+                            {contactMethod === "chatbot"
+                                ? "AI Assistant"
+                                : "Contact Form"}
+                        </h3>
+                    </div>
+                )}
+                {contactMethod === "chatbot" && <ChatBot />}
+                {contactMethod === "form" && <ContactForm />}
+
+                {contactMethod === "undecided" && (
+                    <div className={styles.chatChoiceSection}>
+                        <Button
+                            icon={<AiFillStar className={styles.icon} />}
+                            showText={true}
+                            text="AI Assistant"
+                            onClick={() => setContactMethod("chatbot")}
+                        />
+                        <Button
+                            icon={
+                                <FaEnvelopeOpenText className={styles.icon} />
+                            }
+                            showText={true}
+                            text="Contact Form"
+                            onClick={() => setContactMethod("form")}
+                        />
+                    </div>
+                )}
             </div>
-            <Toast icon={<CiCircleCheck />} showToast={showToast} setShowToast={setShowToast} title="Message Sent Successfully" message="We will get back to you shortly." />
         </div>
     );
 };

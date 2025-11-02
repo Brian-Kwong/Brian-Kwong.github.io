@@ -5,13 +5,20 @@
     --primary-contrast-color: hsl(210, 10%, 20%);
     --primary-contrast-color-2: hsl(210, 10%, 25%);
     --primary-contrast-color-3: hsl(210, 10%, 30%);
+    --primary-contrast-color-4: hsl(210, 10%, 35%);
     --primary-contrast-color-blur: hsla(210, 10%, 15%, 0.7);
 
     --link-color: #2ab7ea;
     --link-hover-color: #1f97c2;
+    --user-message-bg-color: #006e96;
 
     --button-bg-color: rgba(204, 204, 204, 0.5);
     --button-select-bg-color: rgba(202, 240, 248, 0.5);
+
+    --gradient-color-1: #a1ffe2;
+    --gradient-color-2: #a1ffe2;
+    --gradient-color-3: #caf0f8;
+    --gradient-color-4: #81a2e5;
 }
 
 :root {
@@ -56,13 +63,16 @@ button:focus-visible {
         --primary-color: hsl(210, 10%, 20%);
         --primary-color-2: hsl(210, 10%, 25%);
         --primary-color-3: hsl(210, 10%, 30%);
-        --primary-contrast-color: hsl(5, 10%, 85%);
-        --primary-contrast-color-2: hsl(5, 10%, 90%);
-        --primary-contrast-color-3: hsl(5, 10%, 95%);
+        --primary-contrast-color: hsl(5, 10%, 80%);
+        --primary-contrast-color-2: hsl(5, 10%, 85%);
+        --primary-contrast-color-3: hsl(5, 10%, 90%);
+        --primary-contrast-color-4: hsl(5, 10%, 95%);
         --primary-contrast-color-blur: hsla(5, 10%, 95%, 0.7);
 
         --button-bg-color: rgba(204, 204, 204, 0.5);
         --button-select-bg-color: rgba(0, 119, 182, 0.5);
+
+        --user-message-bg-color: #8fd3f4;
     }
 }
 
@@ -79,6 +89,12 @@ h1 {
 
 h2 {
     font-size: 3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 700;
 }

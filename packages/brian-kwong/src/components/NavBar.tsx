@@ -16,7 +16,9 @@ export const NavBar: React.FC = () => {
     const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
     const activeSection = ActiveSectionObserver({ threshold: 0.1 });
-    const [selected, setSelected] = React.useState<string>(activeSection?.toLowerCase() || "about me");
+    const [selected, setSelected] = React.useState<string>(
+        activeSection?.toLowerCase() || "about me"
+    );
 
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);

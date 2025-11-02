@@ -25,7 +25,7 @@
 }
 
 .educationHeader .rightSection {
-    text-align: end
+    text-align: end;
 }
 
 .educationHeader .hstack {
@@ -33,7 +33,6 @@
     flex-direction: row;
     gap: 1rem;
 }
-
 
 .educationIcon {
     display: flex;
@@ -60,7 +59,7 @@
         flex-direction: column;
         gap: 0.25rem;
         margin: 1rem 0;
-    }    
+    }
 
     .educationHeader p {
         margin: 0;

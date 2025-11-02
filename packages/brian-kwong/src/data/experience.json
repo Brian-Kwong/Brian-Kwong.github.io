@@ -1,32 +1,32 @@
 [
-  {
-    "title": "UI/UX Designer & Developer",
-    "company": "Hack4Impact",
-    "location": "CalPoly SLO",
-    "from": "Sep 2023",
-    "to": "Jun 2025",
-    "keySkills": [
-      "Figma",
-      "User Research",
-      "Prototyping",
-      "CSS",
-      "React & Component Libraries",
-      "User Testing"
-    ],
-    "icon": "Design"
-  },
-  {
-    "title": "Teaching Assistant",
-    "company": "CPE Department",
-    "location": "CalPoly SLO",
-    "from": "Jan 2025",
-    "to": "Jun 2025",
-    "keySkills": [
-      "Network Concepts",
-      "Systems Design & Programming",
-      "Automation Scripting",
-      "Student Support"
-    ],
-    "icon": "Network"
-  }
+    {
+        "title": "UI/UX Designer & Developer",
+        "company": "Hack4Impact",
+        "location": "CalPoly SLO",
+        "from": "Sep 2023",
+        "to": "Jun 2025",
+        "keySkills": [
+            "Figma",
+            "User Research",
+            "Prototyping",
+            "CSS",
+            "React & Component Libraries",
+            "User Testing"
+        ],
+        "icon": "Design"
+    },
+    {
+        "title": "Teaching Assistant",
+        "company": "CPE Department",
+        "location": "CalPoly SLO",
+        "from": "Jan 2025",
+        "to": "Jun 2025",
+        "keySkills": [
+            "Network Concepts",
+            "Systems Design & Programming",
+            "Automation Scripting",
+            "Student Support"
+        ],
+        "icon": "Network"
+    }
 ]

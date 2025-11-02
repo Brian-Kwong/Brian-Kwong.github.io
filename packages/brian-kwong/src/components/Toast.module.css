@@ -1,5 +1,5 @@
-.toastContainer{
-     --success-color: hsl(120, 25%, 65%);
+.toastContainer {
+    --success-color: hsl(120, 25%, 65%);
     --error-color: hsl(0, 53%, 76%);
 }
 
@@ -19,7 +19,7 @@
     width: 20rem;
 }
 
-.hstack{
+.hstack {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -27,21 +27,25 @@
     padding: 0.5rem 1rem;
 }
 
-.success{
-        border: 1px dashed var(--success-color);
+.success {
+    border: 1px dashed var(--success-color);
+}
+
+.error {
+    border: 1px dashed var(--error-color);
 }
 
 .toastContainer p {
     margin: 0;
 }
 
-.title{
+.title {
     font-weight: 700;
     margin-bottom: 0.5rem;
     text-align: left;
 }
 
-.message{
+.message {
     text-align: left;
 }
 
@@ -55,7 +59,9 @@
 }
 
 .showToast {
-    animation: slideIn 0.5s forwards, fadeOut 0.5s 2.5s forwards;
+    animation:
+        slideIn 0.5s forwards,
+        fadeOut 0.5s 2.5s forwards;
 }
 
 @keyframes slideIn {
