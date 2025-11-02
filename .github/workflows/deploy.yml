@@ -33,7 +33,7 @@ jobs:
           run: npm run build
           working-directory: ./packages/brian-kwong
         - name: Upload Build Artifacts
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-pages-artifact@v3
           with:
             name: build-artifact
             path: ./packages/brian-kwong/dist
