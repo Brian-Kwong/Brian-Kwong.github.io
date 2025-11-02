@@ -1,4 +1,5 @@
-const backendURL = "https://2dzhwykl63pwypihcvhyqla3zi0zpswr.lambda-url.us-east-1.on.aws/website-agent-chat";
+const backendURL =
+    "https://2dzhwykl63pwypihcvhyqla3zi0zpswr.lambda-url.us-east-1.on.aws/website-agent-chat";
 
 const processUserMessage = async (
     message: string,
