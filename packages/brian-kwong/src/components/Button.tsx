@@ -4,6 +4,7 @@ import styles from "./Button.module.css";
 type ButtonProps = {
     icon?: React.ReactNode;
     text?: string;
+    ariaLabel?: string;
     isSelected?: boolean;
     showText?: boolean;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -12,12 +13,14 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
     icon,
     text,
+    ariaLabel,
     isSelected,
     showText = false,
     onClick,
 }) => {
     return (
         <button
+            aria-label={ariaLabel || text || "button"}
             onClick={onClick}
             className={isSelected ? styles["selected"] : ""}
         >

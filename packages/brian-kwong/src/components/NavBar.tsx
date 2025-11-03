@@ -36,30 +36,35 @@ export const NavBar: React.FC = () => {
     return (
         <div className={styles["navbar"]}>
             <Button
+                ariaLabel="About Me"
                 icon={<IoPerson className="icon" />}
                 text="About Me"
                 isSelected={selected === "about-me"}
                 onClick={() => scrollToSection("about-me")}
             />
             <Button
+                ariaLabel="Projects"
                 icon={<TbPackages className="icon" />}
                 text="Projects"
                 isSelected={selected === "projects"}
                 onClick={() => scrollToSection("projects")}
             />
             <Button
+                ariaLabel="Experience"
                 icon={<MdOutlineWork className="icon" />}
                 text={isMobile ? "Exp." : "Experience"}
                 isSelected={selected === "experience"}
                 onClick={() => scrollToSection("experience")}
             />
             <Button
+                ariaLabel="Education"
                 icon={<MdSchool className="icon" />}
                 text="Education"
                 isSelected={selected === "education"}
                 onClick={() => scrollToSection("education")}
             />
             <Button
+                ariaLabel="Contact Me"
                 icon={<MdEmail className="icon" />}
                 text="Contact"
                 isSelected={selected === "contact-me"}

@@ -115,6 +115,7 @@ const ChatBot: React.FC = () => {
                     onChange={(e) => setUserMessage(e.target.value)}
                 />
                 <Button
+                    ariaLabel="Send Message"
                     icon={<FiSend />}
                     onClick={() => {
                         if (userMessage.trim() === "") return;

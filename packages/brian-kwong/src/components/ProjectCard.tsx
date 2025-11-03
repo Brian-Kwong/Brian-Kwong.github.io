@@ -63,6 +63,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                         {actions.map((action, index) => (
                             <Button
                                 key={index}
+                                ariaLabel={action.text}
                                 showText={true}
                                 icon={resolveActionIconString(action.icon)}
                                 text={action.text}

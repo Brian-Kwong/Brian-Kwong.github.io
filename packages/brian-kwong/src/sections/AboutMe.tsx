@@ -23,7 +23,7 @@ const AboutMe: React.FC = () => {
                     {isMobile && (
                         <img
                             className={styles.profilePicture}
-                            src="./profilePic.png"
+                            src="./profilePic.webp"
                             alt="Profile Picture"
                         />
                     )}
@@ -72,7 +72,7 @@ const AboutMe: React.FC = () => {
                 {!isMobile && (
                     <img
                         className={styles.profilePicture}
-                        src="./profilePic.png"
+                        src="./profilePic.webp"
                         alt="Profile Picture"
                     />
                 )}

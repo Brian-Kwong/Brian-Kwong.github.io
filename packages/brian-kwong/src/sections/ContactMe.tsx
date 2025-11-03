@@ -49,6 +49,7 @@ const ContactMe: React.FC = () => {
                         <h1>Contact Me</h1>
                         <div className={styles.linksContainer}>
                             <Button
+                                ariaLabel="Email"
                                 isSelected={secondaryContactMethod === "email"}
                                 icon={<MdOutlineMail className={styles.icon} />}
                                 onClick={() =>
@@ -56,6 +57,7 @@ const ContactMe: React.FC = () => {
                                 }
                             />
                             <Button
+                                ariaLabel="LinkedIn"
                                 isSelected={
                                     secondaryContactMethod === "linkedin"
                                 }
@@ -65,6 +67,7 @@ const ContactMe: React.FC = () => {
                                 }
                             />
                             <Button
+                                ariaLabel="GitHub"
                                 isSelected={secondaryContactMethod === "github"}
                                 icon={<FaGithub className={styles.icon} />}
                                 onClick={() =>
@@ -77,6 +80,7 @@ const ContactMe: React.FC = () => {
                 {contactMethod !== "undecided" && (
                     <div className={styles.backButtonSection}>
                         <Button
+                            ariaLabel="Back"
                             icon={<IoIosArrowBack className={styles.icon} />}
                             onClick={() => setContactMethod("undecided")}
                         />
@@ -93,12 +97,14 @@ const ContactMe: React.FC = () => {
                 {contactMethod === "undecided" && (
                     <div className={styles.chatChoiceSection}>
                         <Button
+                            ariaLabel="AI Assistant"
                             icon={<AiFillStar className={styles.icon} />}
                             showText={true}
                             text="AI Assistant"
                             onClick={() => setContactMethod("chatbot")}
                         />
                         <Button
+                            ariaLabel="Contact Form"
                             icon={
                                 <FaEnvelopeOpenText className={styles.icon} />
                             }
