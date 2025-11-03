@@ -31,7 +31,7 @@ const ContactMe: React.FC = () => {
                                 icon={<MdOutlineMail className={styles.icon} />}
                                 onClick={() =>
                                     (window.location.href =
-                                        "mailto:your.email@example.com")
+                                        "mailto:brianl200486@gmail.com")
                                 }
                             />
                             <Button
