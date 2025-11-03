@@ -18,11 +18,13 @@ git clone https://github.com/Brian-Kwong/Brian-Kwong.github.io.git
 ```bash
 cd Brian-Kwong.github.io/packages/brian-kwong-express-sl
 ```
+
 3. Install dependencies:
 
 ```bash
 npm install
 ```
+
 4. Start the server:
 
 ```bash
