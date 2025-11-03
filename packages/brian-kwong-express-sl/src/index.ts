@@ -2,9 +2,10 @@ import serverless from "serverless-http";
 import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
-import { Ollama } from "ollama";
 import nodemailer from "nodemailer";
 import fs from "fs";
+import path from "path";
+import Groq from "groq-sdk";
 
 // Local Data from JSON files
 import educationData from "./data/education.json";
@@ -16,14 +17,12 @@ dotenv.config();
 const app = express();
 let ollama;
 const corsOptions = {
-  origin: "https://brian-kwong.github.io",
+  origin: "https://brian-kwong.github.io/",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(express.json());
-
-const brianCV = fs.readFileSync("./src/data/bkwong_cv.md", "utf-8");
 
 app.post("/post-contact-form", async (req, res, next) => {
   const { name, email, message } = req.body;
@@ -67,8 +66,13 @@ app.post("/post-contact-form", async (req, res, next) => {
 });
 
 app.post("/website-agent-chat", async (req, res, next) => {
+  const brianCVPath =
+    process.env.NODE_ENV === "production"
+      ? path.join(__dirname, "data", "bkwong_cv.md")
+      : "./src/data/bkwong_cv.md";
+  const brianCV = fs.readFileSync(brianCVPath, "utf-8");
   const userMessage = req.body.message;
-  const previousMessages = req.body.previousMessages || [];
+  let previousMessages = req.body.previousMessages || [];
 
   const prompt = `You are a Meowy, a helpful website assistant for Brian's personal website here to help visitors learn more about Brian.
   Please use the following pieces of information and the resources below ONLY to answer the question passed in by the website visitor.
@@ -86,13 +90,8 @@ app.post("/website-agent-chat", async (req, res, next) => {
 
   ------------------------------------------------
 
-  User's Question: ${userMessage}
-
   You may also utilize previous messages in the conversation to provide context where relevant.
-  
-  Previous Conversation Context:
-  ${previousMessages.length > 0 ? JSON.stringify(previousMessages, null, 2) : "No previous conversation history."}
-  
+    
   When responding, you MUST adhere to the following guidelines:
   You are free to follow any links provided on the websites provided to gather further context if needed but DO NOT use any other information and under NO CIRCUMSTANCES should you make up results that are not explicitly stated in the provided resources.
   If you are unable to answer a question, error on the side of caution and indicate that you do not know the answer rather than implying an piece of information. 
@@ -104,16 +103,21 @@ app.post("/website-agent-chat", async (req, res, next) => {
   Thank you!
   `;
 
-  const message = await ollama.chat({
-    model: "llama3.2:latest",
-    messages: [{ role: "user", content: prompt }],
+  const message = await ollama.chat.completions.create({
+    model: "llama-3.1-8b-instant",
+    messages: [
+      { role: "system", content: prompt },
+      ...previousMessages,
+      { role: "user", content: userMessage },
+    ],
+    max_tokens: 200,
   });
   return res.status(200).json({
-    message: message.message.content,
+    message: message.choices[0].message.content,
   });
 });
 
-app.use((req, res, next) => {
+app.use((_req, res, _next) => {
   return res.status(404).json({
     error: "The requested resource was not found.",
   });
@@ -122,8 +126,8 @@ app.use((req, res, next) => {
 const server = serverless(app);
 
 export const handler = async (event: any, context: any) => {
-  ollama = new Ollama({
-    host: process.env.CHAT_BOT_API_URL || "http://localhost:11434",
+  ollama = new Groq({
+    apiKey: process.env.GROQ_API_KEY || "",
   });
   context.callbackWaitsForEmptyEventLoop = false;
   return server(event, context);

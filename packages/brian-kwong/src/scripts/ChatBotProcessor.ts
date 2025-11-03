@@ -22,8 +22,8 @@ const processUserMessage = async (
                     )
                     .map((msg) => {
                         return {
-                            message: msg.message,
-                            user: msg.isUser ? "User" : "Meowy",
+                            content: msg.message,
+                            role: msg.isUser ? "user" : "assistant",
                         };
                     }),
             }),
