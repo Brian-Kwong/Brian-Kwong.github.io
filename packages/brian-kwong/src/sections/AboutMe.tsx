@@ -22,6 +22,7 @@ const AboutMe: React.FC = () => {
                     <h1>About Me</h1>
                     {isMobile && (
                         <img
+                            fetchPriority="high"
                             className={styles.profilePicture}
                             src="./profilePic.webp"
                             alt="Profile Picture"
