@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 
 import styles from "../sections/ContactMe.module.css";
 import chatBotStyles from "./ChatBot.module.css";
+import Markdown from "react-markdown";
 import Button from "./Button";
 
 import processUserMessage from "../scripts/ChatBotProcessor";
@@ -33,7 +34,7 @@ const ChatMessage: React.FC<{ message: string; isUser: boolean }> = ({
         <div
             className={`${chatBotStyles.message} ${isUser ? chatBotStyles.user : message === "Formulating a response..." ? chatBotStyles.waiting : chatBotStyles.bot}`}
         >
-            {displayedMessage}
+            <Markdown>{displayedMessage}</Markdown>
         </div>
     );
 };

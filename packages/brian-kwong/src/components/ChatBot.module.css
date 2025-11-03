@@ -38,6 +38,11 @@
     text-align: left;
 }
 
+.message * {
+    color: var(--text-color);
+    margin: 0 !important;
+}
+
 .message.user {
     align-self: flex-end;
     background-color: var(--user-message-bg-color);
