@@ -39,7 +39,7 @@ const ContactMe: React.FC = () => {
                                 icon={<FaLinkedin className={styles.icon} />}
                                 onClick={() =>
                                     window.open(
-                                        "https://www.linkedin.com/in/yourprofile",
+                                        "https://www.linkedin.com/in/brian-kwong-b68215249/",
                                         "_blank"
                                     )
                                 }
@@ -49,7 +49,7 @@ const ContactMe: React.FC = () => {
                                 icon={<FaGithub className={styles.icon} />}
                                 onClick={() =>
                                     window.open(
-                                        "https://github.com/yourprofile",
+                                        "https://github.com/brian-kwong",
                                         "_blank"
                                     )
                                 }
