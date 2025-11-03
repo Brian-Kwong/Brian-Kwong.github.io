@@ -34,7 +34,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                     <p className={styles.leftSection}>{location}</p>
                     <p className={styles.leftSection}>{`${from} - ${to}`}</p>
                 </div>
-                <p className={styles.rightSection}>{`${gpa} GPA`}</p>
+                <p className={styles.rightSection}>{`${gpa > 0 ? `${gpa} GPA` : ""}`}</p>
             </div>
             <div className={styles.educationBody}>
                 {keyCourses && keyCourses.length > 0 && (
