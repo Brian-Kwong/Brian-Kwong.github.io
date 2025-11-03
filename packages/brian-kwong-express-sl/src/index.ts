@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 let ollama;
 const corsOptions = {
-  origin: "https://brian-kwong.github.io/",
+  origin: "https://brian-kwong.github.io",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
