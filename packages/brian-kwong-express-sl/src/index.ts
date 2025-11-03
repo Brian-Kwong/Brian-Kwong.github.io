@@ -4,11 +4,13 @@ import dotenv from "dotenv";
 import cors from "cors";
 import { Ollama } from "ollama";
 import nodemailer from "nodemailer";
+import fs from "fs";
 
 // Local Data from JSON files
 import educationData from "./data/education.json";
 import experienceData from "./data/experience.json";
 import projectsData from "./data/projects.json";
+import githubData from "./data/github.json";
 
 dotenv.config();
 const app = express();
@@ -20,6 +22,8 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 app.use(express.json());
+
+const brianCV = fs.readFileSync("./src/data/bkwong_cv.md", "utf-8");
 
 app.post("/post-contact-form", async (req, res, next) => {
   const { name, email, message } = req.body;
@@ -69,13 +73,18 @@ app.post("/website-agent-chat", async (req, res, next) => {
   const prompt = `You are a Meowy, a helpful website assistant for Brian's personal website here to help visitors learn more about Brian.
   Please use the following pieces of information and the resources below ONLY to answer the question passed in by the website visitor.
 
+  --------------------------------------------------
+  Resources:
+
   Education: ${JSON.stringify(educationData, null, 2)}
   Experience: ${JSON.stringify(experienceData, null, 2)}
   Projects: ${JSON.stringify(projectsData, null, 2)}
 
-  Brian's GitHub: https://github.com/brian-kwong
+  Brian's GitHub: ${JSON.stringify(githubData, null, 2)}
   Brian's LinkedIn: https://www.linkedin.com/in/brian-kwong-b68215249/
-  Brian's CV: https://docs.google.com/document/d/e/2PACX-1vT6OxWUNzKvtRH-A8SNSrDIoWuUuCc9IMv52fH6pUIcahuFGFkYD3SUlz9x9ls1RN2_k0GuA13G20oh/pub
+  Brian's CV (Markdown Format): ${brianCV}
+
+  ------------------------------------------------
 
   User's Question: ${userMessage}
 
