@@ -1,5 +1,5 @@
 const backendURL =
-    "https://2dzhwykl63pwypihcvhyqla3zi0zpswr.lambda-url.us-east-1.on.aws/post-contact-form";
+    "https://3yks25mcrltflcshp6y3bvxl540jisfh.lambda-url.us-east-1.on.aws/post-contact-form";
 
 const verifyForm = (name: string, email: string, message: string): string => {
     if (name.trim() === "") return "Please enter your name.";

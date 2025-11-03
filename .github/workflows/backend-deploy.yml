@@ -23,6 +23,9 @@ jobs:
           working-directory: ./packages/brian-kwong-express-sl
         - name: Install Serverless Framework
           run: npm install -g serverless
+        - name: Copy over .env file
+          run: echo "${{ secrets.BACKEND_ENV_FILE_CONTENTS }}" > .env
+          working-directory: ./packages/brian-kwong-express-sl
         - name: Deploy Serverless Application
           run: serverless deploy --stage prod
           working-directory: ./packages/brian-kwong-express-sl
