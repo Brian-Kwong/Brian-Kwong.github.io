@@ -19,6 +19,28 @@ const ContactMe: React.FC = () => {
         "form" | "chatbot" | "undecided"
     >("undecided");
 
+    const [secondaryContactMethod, setSecondaryContactMethod] = React.useState<
+        "email" | "github" | "linkedin" | null
+    >(null);
+
+    React.useEffect(() => {
+        if (!secondaryContactMethod) return;
+        const timeout = setTimeout(() => {
+            setSecondaryContactMethod(null);
+        }, 100);
+        if (secondaryContactMethod === "email") {
+            window.location.href = "mailto:brianl200486@gmail.com";
+        } else if (secondaryContactMethod === "github") {
+            window.open("https://github.com/brian-kwong", "_blank");
+        } else if (secondaryContactMethod === "linkedin") {
+            window.open(
+                "https://www.linkedin.com/in/brian-kwong-b68215249/",
+                "_blank"
+            );
+        }
+        return () => clearTimeout(timeout);
+    }, [secondaryContactMethod]);
+
     return (
         <div className="sectionContainer">
             <div className={styles.contactMeSection + " vstack"}>
@@ -27,31 +49,26 @@ const ContactMe: React.FC = () => {
                         <h1>Contact Me</h1>
                         <div className={styles.linksContainer}>
                             <Button
-                                text="Email"
+                                isSelected={secondaryContactMethod === "email"}
                                 icon={<MdOutlineMail className={styles.icon} />}
                                 onClick={() =>
-                                    (window.location.href =
-                                        "mailto:brianl200486@gmail.com")
+                                    setSecondaryContactMethod("email")
                                 }
                             />
                             <Button
-                                text="LinkedIn"
+                                isSelected={
+                                    secondaryContactMethod === "linkedin"
+                                }
                                 icon={<FaLinkedin className={styles.icon} />}
                                 onClick={() =>
-                                    window.open(
-                                        "https://www.linkedin.com/in/brian-kwong-b68215249/",
-                                        "_blank"
-                                    )
+                                    setSecondaryContactMethod("linkedin")
                                 }
                             />
                             <Button
-                                text="GitHub"
+                                isSelected={secondaryContactMethod === "github"}
                                 icon={<FaGithub className={styles.icon} />}
                                 onClick={() =>
-                                    window.open(
-                                        "https://github.com/brian-kwong",
-                                        "_blank"
-                                    )
+                                    setSecondaryContactMethod("github")
                                 }
                             />
                         </div>
