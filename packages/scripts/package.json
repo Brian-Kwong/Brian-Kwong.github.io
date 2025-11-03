@@ -1,0 +1,23 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "Scripts for Brian-Kwong-Website",
+  "license": "ISC",
+  "type": "module",
+  "author": "Brian Kwong",
+  "scripts": {
+    "format": "prettier --write .",
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@types/node": "^24.10.0",
+    "dotenv": "^17.2.3",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "tsc": "^2.0.4",
+    "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6"
+  }
+}
