@@ -29,7 +29,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     imageDirection = "auto",
     actions = [],
 }) => {
-
     return (
         <div className={styles["project-card"]}>
             <h2>{title}</h2>

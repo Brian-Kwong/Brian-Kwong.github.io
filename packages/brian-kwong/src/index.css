@@ -107,11 +107,15 @@ p {
 section {
     opacity: 0;
     margin-bottom: -100px;
-    transition: opacity 0.5s ease-out, margin-bottom 0.5s ease-out;
+    transition:
+        opacity 0.5s ease-out,
+        margin-bottom 0.5s ease-out;
 }
 
 section.visible {
     opacity: 1;
     margin-bottom: 0;
-    transition: opacity 0.5s ease-in, margin-bottom 0.5s ease-in;
+    transition:
+        opacity 0.5s ease-in,
+        margin-bottom 0.5s ease-in;
 }

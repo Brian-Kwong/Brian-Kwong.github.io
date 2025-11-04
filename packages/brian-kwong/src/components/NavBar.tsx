@@ -15,14 +15,12 @@ type NavBarProps = {
 };
 
 export const NavBar: React.FC<NavBarProps> = ({ selected }) => {
-
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
         }
     };
-
 
     return (
         <div className={styles["navbar"]}>
@@ -41,22 +39,22 @@ export const NavBar: React.FC<NavBarProps> = ({ selected }) => {
                 onClick={() => scrollToSection("projects")}
             />
             <div className={styles.mobileExpr}>
-            <Button
-                ariaLabel="Experience"
-                icon={<MdOutlineWork className="icon" />}
-                text="Exper..."
-                isSelected={selected === "experience"}
-                onClick={() => scrollToSection("experience")}
-            />
+                <Button
+                    ariaLabel="Experience"
+                    icon={<MdOutlineWork className="icon" />}
+                    text="Exper..."
+                    isSelected={selected === "experience"}
+                    onClick={() => scrollToSection("experience")}
+                />
             </div>
             <div className={styles.desktopExpr}>
-                        <Button
-                ariaLabel="Experience"
-                icon={<MdOutlineWork className="icon" />}
-                text="Experience"
-                isSelected={selected === "experience"}
-                onClick={() => scrollToSection("experience")}
-            />
+                <Button
+                    ariaLabel="Experience"
+                    icon={<MdOutlineWork className="icon" />}
+                    text="Experience"
+                    isSelected={selected === "experience"}
+                    onClick={() => scrollToSection("experience")}
+                />
             </div>
             <Button
                 ariaLabel="Education"

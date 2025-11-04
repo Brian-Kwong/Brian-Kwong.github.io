@@ -12,18 +12,17 @@ import { FaPaintBrush } from "react-icons/fa";
 import { GrSystem } from "react-icons/gr";
 
 const AboutMe: React.FC = () => {
-
     return (
         <div className="sectionContainer">
             <div className="hstack">
                 <div className={styles.aboutMeSection}>
                     <h1>About Me</h1>
-                        <img
-                            fetchPriority="high"
-                            className={`${styles.profilePicture} ${styles.mobileProfilePicture}`}
-                            src="./profilePic.webp"
-                            alt="Profile Picture"
-                        />
+                    <img
+                        fetchPriority="high"
+                        className={`${styles.profilePicture} ${styles.mobileProfilePicture}`}
+                        src="./profilePic.webp"
+                        alt="Profile Picture"
+                    />
                     <p
                         style={{
                             textAlign: "left",
@@ -70,8 +69,8 @@ const AboutMe: React.FC = () => {
                     fetchPriority="high"
                     className={`${styles.profilePicture} ${styles.desktopProfilePicture}`}
                     src="./profilePic.webp"
-                        alt="Profile Picture"
-                    />
+                    alt="Profile Picture"
+                />
             </div>
         </div>
     );

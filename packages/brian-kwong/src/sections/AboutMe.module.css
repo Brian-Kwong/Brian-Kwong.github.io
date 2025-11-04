@@ -14,7 +14,7 @@
 }
 
 .mobileProfilePicture {
-    display: none
+    display: none;
 }
 
 .desktopProfilePicture {
@@ -33,10 +33,9 @@
     height: 1.5rem;
 }
 
-
 @media (max-width: 1024px) {
     .mobileProfilePicture {
-        display: block;;
+        display: block;
     }
     .desktopProfilePicture {
         display: none;
