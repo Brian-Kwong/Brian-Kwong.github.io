@@ -11,4 +11,10 @@ export default defineConfig({
         }),
     ],
     base: "./",
+    build: {
+        modulePreload: {
+            polyfill: true,
+        },
+        cssCodeSplit: true,
+    },
 });
