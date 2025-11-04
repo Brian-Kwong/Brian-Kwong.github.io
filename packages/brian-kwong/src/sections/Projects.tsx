@@ -16,7 +16,7 @@ const Projects: React.FC = () => {
                         imageUrls={Array.from(
                             { length: project.numberOfImages || 3 },
                             (_, i) =>
-                                `/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}/img${i + 1}.webp`
+                                `/projects/${project.title.toLowerCase().replace(/\s+/g, "-")}/img${i + 1}`
                         )}
                         imageDirection={project.imageDirection || "auto"}
                         actions={project.actions || []}
