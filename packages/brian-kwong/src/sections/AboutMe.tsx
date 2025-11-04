@@ -21,7 +21,7 @@ const AboutMe: React.FC = () => {
                         fetchPriority="high"
                         className={`${styles.profilePicture} ${styles.mobileProfilePicture}`}
                         src="profilePic.webp"
-                        srcSet="./profilePicS.webp 640px, ./profilePicM.webp 1080px, ./profilePicL.webp 1620px, ./profilePic.webp 2160px"
+                        srcSet="./profilePicS.webp 640w, ./profilePicM.webp 1080w, ./profilePicL.webp 1620w, ./profilePic.webp 2160w"
                         sizes="25rem"
                         alt="Profile Picture"
                     />
