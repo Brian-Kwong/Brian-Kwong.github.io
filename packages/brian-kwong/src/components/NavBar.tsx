@@ -18,9 +18,6 @@ export const NavBar: React.FC<NavBarProps> = ({ selected }) => {
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
         if (section) {
-            setTimeout(() => {
-                 section.scrollIntoView({ behavior: "smooth", block: "start" });
-            }, 1000);
             section.scrollIntoView({ behavior: "smooth", block: "start" });
         }
     };
