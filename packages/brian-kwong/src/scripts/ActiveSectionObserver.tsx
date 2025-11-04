@@ -1,9 +1,8 @@
 import React from "react";
 
 const ActiveSectionObserver = ({ threshold = 0.1 }) => {
-    const [activeSection, setActiveSection] = React.useState<string | null>(
-        null
-    );
+
+    const [activeSections, setActiveSections] = React.useState<string[]>([]);
     const sections = React.useRef<HTMLElement[]>([]);
     React.useEffect(() => {
         sections.current = Array.from(document.querySelectorAll("section"));
@@ -11,7 +10,11 @@ const ActiveSectionObserver = ({ threshold = 0.1 }) => {
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        setActiveSection(entry.target.id);
+                        setActiveSections((prev) => [...prev, entry.target.id]);
+                    } else {
+                        setActiveSections((prev) =>
+                            prev.filter((id) => id !== entry.target.id)
+                        );
                     }
                 });
             },
@@ -28,7 +31,7 @@ const ActiveSectionObserver = ({ threshold = 0.1 }) => {
             });
         };
     }, [threshold]);
-    return activeSection;
+    return { activeSections: activeSections, selectedSection: activeSections.length > 0 ? activeSections[activeSections.length - 1] : null };
 };
 
 export default ActiveSectionObserver;

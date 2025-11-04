@@ -9,14 +9,12 @@ import { MdSchool } from "react-icons/md";
 import { MdEmail } from "react-icons/md";
 
 import styles from "./NavBar.module.css";
-import ActiveSectionObserver from "../scripts/ActiveSectionObserver";
 
-export const NavBar: React.FC = () => {
+type NavBarProps = {
+    selected: string;
+};
 
-    const activeSection = ActiveSectionObserver({ threshold: 0.1 });
-    const [selected, setSelected] = React.useState<string>(
-        activeSection?.toLowerCase() || "about me"
-    );
+export const NavBar: React.FC<NavBarProps> = ({ selected }) => {
 
     const scrollToSection = (sectionId: string) => {
         const section = document.getElementById(sectionId);
@@ -25,11 +23,6 @@ export const NavBar: React.FC = () => {
         }
     };
 
-    React.useEffect(() => {
-        if (activeSection) {
-            setSelected(activeSection.toLowerCase());
-        }
-    }, [activeSection]);
 
     return (
         <div className={styles["navbar"]}>
