@@ -42,7 +42,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                 className={styles[imageDirection]}
                                 key={index}
                                 src={`${url}.webp`}
-                                srcSet={`${url}S.webp 0.5x, ${url}M.webp 1x, ${url}L.webp 1.5x, ${url}.webp 2x`}
+                                srcSet={`${url}S.webp 1x, ${url}M.webp 1x, ${url}L.webp 2x, ${url}.webp 3x`}
                                 alt={`${title} screenshot ${index + 1}`}
                             />
                         ))}
