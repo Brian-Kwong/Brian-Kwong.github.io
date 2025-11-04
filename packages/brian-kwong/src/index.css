@@ -109,7 +109,6 @@ section {
     animation: fadeOut 1s ease-in forwards;
 }
 
-
 section.visible {
     opacity: 1;
     animation: fadeIn 1s ease-in forwards;
