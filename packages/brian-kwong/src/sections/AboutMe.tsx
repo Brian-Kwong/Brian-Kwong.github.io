@@ -20,7 +20,9 @@ const AboutMe: React.FC = () => {
                     <img
                         fetchPriority="high"
                         className={`${styles.profilePicture} ${styles.mobileProfilePicture}`}
-                        src="./profilePic.webp"
+                        src="profilePic.webp"
+                        srcSet="./profilePicS.webp 640px, ./profilePicM.webp 1080px, ./profilePicL.webp 1620px, ./profilePic.webp 2160px"
+                        sizes="25rem"
                         alt="Profile Picture"
                     />
                     <p
