@@ -72,6 +72,8 @@ const AboutMe: React.FC = () => {
                     className={`${styles.profilePicture} ${styles.desktopProfilePicture}`}
                     src="./profilePic.webp"
                     alt="Profile Picture"
+                    width={"25rem"}
+                    height={"25rem"}
                 />
             </div>
         </div>
