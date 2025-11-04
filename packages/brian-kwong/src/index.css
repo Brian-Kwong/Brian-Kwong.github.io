@@ -106,12 +106,12 @@ p {
 
 section {
     opacity: 0;
-    transition: opacity 0.5s ease-out;
-    z-index: -1;
+    margin-bottom: -100px;
+    transition: opacity 0.5s ease-out, margin-bottom 0.5s ease-out;
 }
 
 section.visible {
     opacity: 1;
-    transition: opacity 0.5s ease-in;
-    z-index: 1;
+    margin-bottom: 0;
+    transition: opacity 0.5s ease-in, margin-bottom 0.5s ease-in;
 }
