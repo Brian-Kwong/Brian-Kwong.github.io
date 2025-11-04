@@ -1,5 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 
 import Button from "../components/Button";
 
@@ -13,7 +12,6 @@ import styles from "./NavBar.module.css";
 import ActiveSectionObserver from "../scripts/ActiveSectionObserver";
 
 export const NavBar: React.FC = () => {
-    const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
     const activeSection = ActiveSectionObserver({ threshold: 0.1 });
     const [selected, setSelected] = React.useState<string>(
@@ -52,7 +50,7 @@ export const NavBar: React.FC = () => {
             <Button
                 ariaLabel="Experience"
                 icon={<MdOutlineWork className="icon" />}
-                text={isMobile ? "Exp." : "Experience"}
+                text="Experience"
                 isSelected={selected === "experience"}
                 onClick={() => scrollToSection("experience")}
             />

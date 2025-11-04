@@ -1,5 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 
 import { resolveActionIconString } from "./Icons";
 
@@ -30,12 +29,11 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
     imageDirection = "auto",
     actions = [],
 }) => {
-    const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
     return (
         <div className={styles["project-card"]}>
             <h2>{title}</h2>
-            <div className={isMobile ? "vstack" : "hstack"}>
+            <div className={styles["project-content"]}>
                 {imageUrls.length > 0 && (
                     <div
                         className={`${styles["project-images"]} ${styles[imageDirection]}`}

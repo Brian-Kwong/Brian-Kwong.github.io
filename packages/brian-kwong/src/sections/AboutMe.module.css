@@ -1,8 +1,24 @@
+.aboutMeSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .profilePicture {
     width: 25rem;
     height: 25rem;
     border-radius: 50%;
     object-fit: cover;
+    display: none;
+}
+
+.mobileProfilePicture {
+    display: none
+}
+
+.desktopProfilePicture {
+    display: block;
 }
 
 .tagContainer {
@@ -15,4 +31,14 @@
 .icon {
     width: 1.5rem;
     height: 1.5rem;
+}
+
+
+@media (max-width: 1024px) {
+    .mobileProfilePicture {
+        display: block;;
+    }
+    .desktopProfilePicture {
+        display: none;
+    }
 }

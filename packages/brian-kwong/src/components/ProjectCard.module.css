@@ -44,6 +44,15 @@ div.landscape {
     width: 100%;
 }
 
+.project-content {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 .project-images {
     display: flex;
     flex-direction: column;
@@ -82,6 +91,9 @@ p {
 }
 
 @media (max-width: 1024px) {
+    .project-content {
+        flex-direction: column;
+    }
     .project-details {
         max-width: 100%;
     }

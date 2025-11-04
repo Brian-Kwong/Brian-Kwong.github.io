@@ -1,5 +1,4 @@
 import React from "react";
-import { useMediaQuery } from "react-responsive";
 
 import "../components/Components.css";
 import styles from "./AboutMe.module.css";
@@ -13,21 +12,18 @@ import { FaPaintBrush } from "react-icons/fa";
 import { GrSystem } from "react-icons/gr";
 
 const AboutMe: React.FC = () => {
-    const isMobile = useMediaQuery({ query: "(max-width: 1024px)" });
 
     return (
         <div className="sectionContainer">
             <div className="hstack">
-                <div className="about-me-section">
+                <div className={styles.aboutMeSection}>
                     <h1>About Me</h1>
-                    {isMobile && (
                         <img
                             fetchPriority="high"
-                            className={styles.profilePicture}
+                            className={`${styles.profilePicture} ${styles.mobileProfilePicture}`}
                             src="./profilePic.webp"
                             alt="Profile Picture"
                         />
-                    )}
                     <p
                         style={{
                             textAlign: "left",
@@ -70,14 +66,12 @@ const AboutMe: React.FC = () => {
                         />
                     </div>
                 </div>
-                {!isMobile && (
-                    <img
-                        fetchPriority="high"
-                        className={styles.profilePicture}
-                        src="./profilePic.webp"
+                <img
+                    fetchPriority="high"
+                    className={`${styles.profilePicture} ${styles.desktopProfilePicture}`}
+                    src="./profilePic.webp"
                         alt="Profile Picture"
                     />
-                )}
             </div>
         </div>
     );

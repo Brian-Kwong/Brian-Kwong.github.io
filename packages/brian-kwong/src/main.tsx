@@ -5,6 +5,6 @@ import { ViteReactSSG } from 'vite-react-ssg/single-page';
 
 export const createRoot = ViteReactSSG(
     <StrictMode>
-        <App />
+            <App />
     </StrictMode>
-)
+);
