@@ -12,6 +12,7 @@
     right: 0;
     background-color: var(--primary-contrast-color-blur);
     backdrop-filter: blur(10px);
+    z-index: 1000 !important;
 }
 
 .icon {

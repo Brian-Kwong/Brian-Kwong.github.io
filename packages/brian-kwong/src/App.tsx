@@ -10,7 +10,7 @@ import ActiveSectionObserver from "./scripts/ActiveSectionObserver";
 
 function App() {
     const { activeSections, selectedSection } = ActiveSectionObserver({
-        threshold: 0.1,
+        threshold: 0.15,
     });
     const [selected, setSelected] = React.useState<string>(
         selectedSection?.toLowerCase() || "about-me"
