@@ -6,6 +6,7 @@ img {
 img.landscape {
     width: 20rem;
     height: 12.5rem;
+    object-fit: cover;
 }
 
 img.portrait {
