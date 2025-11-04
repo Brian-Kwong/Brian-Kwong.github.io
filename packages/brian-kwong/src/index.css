@@ -70,7 +70,7 @@ button:focus-visible {
         --primary-contrast-color-blur: hsla(5, 10%, 95%, 0.7);
 
         --button-bg-color: rgba(204, 204, 204, 0.5);
-        --button-select-bg-color: rgba(0, 119, 182, 0.5);
+        --button-select-bg-color: rgba(112, 196, 242, 0.5);
 
         --user-message-bg-color: #8fd3f4;
     }

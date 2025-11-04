@@ -24,7 +24,10 @@ function App() {
 
     return (
         <div className="App">
+            <nav>
             <NavBar selected={selected} />
+            </nav>
+            <main id="top">
             <section
                 id="about-me"
                 className={activeSections.includes("about-me") ? "visible" : ""}
@@ -61,6 +64,7 @@ function App() {
             >
                 <ContactMe />
             </section>
+            </main>
         </div>
     );
 }
