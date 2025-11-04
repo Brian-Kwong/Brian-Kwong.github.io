@@ -18,6 +18,18 @@ function App() {
 
     React.useEffect(() => {
         if (selectedSection) {
+            if (selectedSection.toLowerCase() === "about-me") {
+                window.history.replaceState(null, "", window.location.pathname);
+            } else if (
+                window.location.hash.slice(1).toLowerCase() !==
+                selectedSection.toLowerCase()
+            ) {
+                window.history.replaceState(
+                    null,
+                    "",
+                    `#${selectedSection.toLowerCase()}`
+                );
+            }
             setSelected(selectedSection.toLowerCase());
         }
     }, [selectedSection, setSelected]);
@@ -25,45 +37,49 @@ function App() {
     return (
         <div className="App">
             <nav>
-            <NavBar selected={selected} />
+                <NavBar selected={selected} />
             </nav>
             <main id="top">
-            <section
-                id="about-me"
-                className={activeSections.includes("about-me") ? "visible" : ""}
-            >
-                <AboutMe />
-            </section>
-            <section
-                id="projects"
-                className={activeSections.includes("projects") ? "visible" : ""}
-            >
-                <Projects />
-            </section>
-            <section
-                id="experience"
-                className={
-                    activeSections.includes("experience") ? "visible" : ""
-                }
-            >
-                <Experience />
-            </section>
-            <section
-                id="education"
-                className={
-                    activeSections.includes("education") ? "visible" : ""
-                }
-            >
-                <Education />
-            </section>
-            <section
-                id="contact-me"
-                className={
-                    activeSections.includes("contact-me") ? "visible" : ""
-                }
-            >
-                <ContactMe />
-            </section>
+                <section
+                    id="about-me"
+                    className={
+                        activeSections.includes("about-me") ? "visible" : ""
+                    }
+                >
+                    <AboutMe />
+                </section>
+                <section
+                    id="projects"
+                    className={
+                        activeSections.includes("projects") ? "visible" : ""
+                    }
+                >
+                    <Projects />
+                </section>
+                <section
+                    id="experience"
+                    className={
+                        activeSections.includes("experience") ? "visible" : ""
+                    }
+                >
+                    <Experience />
+                </section>
+                <section
+                    id="education"
+                    className={
+                        activeSections.includes("education") ? "visible" : ""
+                    }
+                >
+                    <Education />
+                </section>
+                <section
+                    id="contact-me"
+                    className={
+                        activeSections.includes("contact-me") ? "visible" : ""
+                    }
+                >
+                    <ContactMe />
+                </section>
             </main>
         </div>
     );
