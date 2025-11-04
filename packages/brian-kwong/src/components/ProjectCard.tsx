@@ -42,7 +42,8 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
                                 className={styles[imageDirection]}
                                 key={index}
                                 src={`${url}.webp`}
-                                srcSet={`${url}S.webp 1x, ${url}M.webp 2x, ${url}L.webp 3x, ${url}.webp 4x`}
+                                srcSet={`${url}S.webp 400w, ${url}M.webp 800w, ${url}L.webp 1200w, ${url}.webp 1600w`}
+                                sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, (max-width: 1440px) 1200px, 1600px"
                                 alt={`${title} screenshot ${index + 1}`}
                             />
                         ))}
