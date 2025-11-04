@@ -47,13 +47,24 @@ export const NavBar: React.FC = () => {
                 isSelected={selected === "projects"}
                 onClick={() => scrollToSection("projects")}
             />
+            <div className={styles.mobileExpr}>
             <Button
+                ariaLabel="Experience"
+                icon={<MdOutlineWork className="icon" />}
+                text="Exper..."
+                isSelected={selected === "experience"}
+                onClick={() => scrollToSection("experience")}
+            />
+            </div>
+            <div className={styles.desktopExpr}>
+                        <Button
                 ariaLabel="Experience"
                 icon={<MdOutlineWork className="icon" />}
                 text="Experience"
                 isSelected={selected === "experience"}
                 onClick={() => scrollToSection("experience")}
             />
+            </div>
             <Button
                 ariaLabel="Education"
                 icon={<MdSchool className="icon" />}

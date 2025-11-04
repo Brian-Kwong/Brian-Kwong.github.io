@@ -20,8 +20,25 @@
     cursor: pointer;
 }
 
+.mobileExpr {
+    display: none;
+}
+
+.desktopExpr {
+    display: block;
+}
+
 @media (max-width: 1024px) {
     .navbar {
         justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .mobileExpr {
+        display: block;
+    }
+    .desktopExpr {
+        display: none;
     }
 }
