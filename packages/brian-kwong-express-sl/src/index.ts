@@ -111,7 +111,7 @@ app.post("/website-agent-chat", async (req, res, next) => {
       ...previousMessages,
       { role: "user", content: userMessage },
     ],
-    max_tokens: 200,
+    max_tokens: 500,
   });
   return res.status(200).json({
     message: message.choices[0].message.content,
