@@ -87,6 +87,18 @@ const ChatBot: React.FC = () => {
         }
     }, [waitingForResponse, messages]);
 
+    const sendMessage = () => {
+        if (userMessage.trim() === "") return;
+        setMessages([...messages, { message: userMessage, isUser: true }]);
+        setUserMessage("");
+    };
+
+    const checkIfEnterPressed = (e: React.KeyboardEvent) => {
+        if (e.key === "Enter") {
+            sendMessage();
+        }
+    };
+
     return (
         <div className={styles.formContainer}>
             <div
@@ -113,17 +125,13 @@ const ChatBot: React.FC = () => {
                     placeholder="Type your message..."
                     value={userMessage}
                     onChange={(e) => setUserMessage(e.target.value)}
+                    onKeyDown={checkIfEnterPressed}
                 />
                 <Button
                     ariaLabel="Send Message"
                     icon={<FiSend />}
                     onClick={() => {
-                        if (userMessage.trim() === "") return;
-                        setMessages([
-                            ...messages,
-                            { message: userMessage, isUser: true },
-                        ]);
-                        setUserMessage("");
+                        sendMessage();
                     }}
                 />
             </div>
