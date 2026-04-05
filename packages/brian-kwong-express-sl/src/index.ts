@@ -17,7 +17,7 @@ dotenv.config();
 const app = express();
 let ollama: Groq;
 const corsOptions = {
-  origin: ["https://brian-kwong.github.io", "http://localhost:5173"],
+  origin: "https://brian-kwong.github.io",
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
