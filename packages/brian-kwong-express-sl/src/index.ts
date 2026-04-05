@@ -68,7 +68,7 @@ app.post("/post-contact-form", async (req, res, next) => {
 app.post("/website-agent-chat", async (req, res, next) => {
   const brianCVPath =
     process.env.NODE_ENV === "production"
-      ? path.join(__dirname, "data", "bkwong_cv.md")
+      ? path.join(import.meta.dirname, "data", "bkwong_cv.md")
       : "./src/data/bkwong_cv.md";
   const brianCV = fs.readFileSync(brianCVPath, "utf-8");
   const userMessage = req.body.message;
