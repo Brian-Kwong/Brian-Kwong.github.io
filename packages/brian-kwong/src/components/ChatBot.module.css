@@ -39,11 +39,13 @@
 }
 
 .message * {
+    text-align: left;
     color: var(--text-color);
     margin: 0 !important;
 }
 
 .message.user {
+    text-align: right;
     align-self: flex-end;
     background-color: var(--user-message-bg-color);
     color: var(--text-color);
