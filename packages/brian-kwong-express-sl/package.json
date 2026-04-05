@@ -1,7 +1,7 @@
 {
   "name": "brian-kwong-express-sl",
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "description": "",
   "scripts": {
     "deploy": "serverless deploy",
@@ -18,8 +18,10 @@
     "serverless-http": "^3.1.1"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.5",
     "@types/node": "^24.9.2",
+    "@types/nodemailer": "^8.0.0",
     "prettier": "^3.6.2",
     "serverless": "^4.22.0",
     "serverless-esbuild": "^1.55.1",

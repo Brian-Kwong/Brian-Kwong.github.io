@@ -1,15 +1,16 @@
 {
   "compilerOptions": {
-    "target": "es2022",
-    "module": "commonjs",
+    "target": "es2024",
+    "module": "nodenext",
     "esModuleInterop": true,
     "resolveJsonModule": true,
+    "rootDir": "src",
     "outDir": "dist",
     "sourceMap": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "isolatedModules": false,
-    "lib": ["es2022", "dom"]
+    "lib": ["es2024"]
   },
   "include": ["src/**/*.ts"],
   "exclude": ["node_modules"]

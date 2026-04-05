@@ -12400,9 +12400,9 @@ var require_on_finished = __commonJS({
       if (typeof msg.complete === "boolean") {
         return Boolean(
           msg.upgrade ||
-            !socket ||
-            !socket.readable ||
-            (msg.complete && !msg.readable),
+          !socket ||
+          !socket.readable ||
+          (msg.complete && !msg.readable),
         );
       }
       return void 0;

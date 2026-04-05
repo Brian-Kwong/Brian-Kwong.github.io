@@ -8,14 +8,14 @@ import path from "path";
 import Groq from "groq-sdk";
 
 // Local Data from JSON files
-import educationData from "./data/education.json";
-import experienceData from "./data/experience.json";
-import projectsData from "./data/projects.json";
-import githubData from "./data/github.json";
+import educationData from "./data/education.json" with { type: "json" };
+import experienceData from "./data/experience.json" with { type: "json" };
+import projectsData from "./data/projects.json" with { type: "json" };
+import githubData from "./data/github.json" with { type: "json" };
 
 dotenv.config();
 const app = express();
-let ollama;
+let ollama: Groq;
 const corsOptions = {
   origin: "https://brian-kwong.github.io",
   optionsSuccessStatus: 200,

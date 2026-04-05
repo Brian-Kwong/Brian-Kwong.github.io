@@ -1,14 +1,23 @@
 # "org" ensures this Service is used with the correct Serverless Framework Access Key.
 org: teampikachu08
 service: brian-kwong-express-sl
-useDotenv: true
 
 plugins:
   - "serverless-offline"
 
+build:
+  esbuild:
+    bundle: true
+    minify: true
+    # Adds support for legacy CommonJS modules in ESM projects
+    banner:
+      js: |
+        import { createRequire } from 'module';
+        const require = createRequire(import.meta.url);
+
 provider:
   name: aws
-  runtime: nodejs20.x
+  runtime: nodejs24.x
   environment: ${file(./env.js):env}
   httpApi:
     cors: true
