@@ -46,7 +46,7 @@ const ChatBot: React.FC = () => {
     >([
         {
             message:
-                "Hi I'm Meowy, your web assistant! How can I map help you?",
+                "Hi I'm Meowy, your web assistant! How can I may help you?",
             isUser: false,
         },
     ]);
