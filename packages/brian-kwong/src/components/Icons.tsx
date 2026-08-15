@@ -4,11 +4,12 @@ import { FaMicrosoft } from "react-icons/fa";
 import { FaApple } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaExternalLinkAlt } from "react-icons/fa";
-
 import { FaCode } from "react-icons/fa";
 import { FaMobile } from "react-icons/fa";
 import { AiOutlineAntDesign } from "react-icons/ai";
 import { BsEthernet } from "react-icons/bs";
+import { CiBaseball } from "react-icons/ci";
+
 
 const resolveActionIconString = (
     iconString: string | undefined
@@ -33,6 +34,8 @@ const resolveExprIconString = (
             return <FaCode className="icon" />;
         case "Mobile":
             return <FaMobile className="icon" />;
+        case "Baseball":
+            return <CiBaseball className="icon" />;
         case "Design":
             return <AiOutlineAntDesign className="icon" />;
         case "Network":
