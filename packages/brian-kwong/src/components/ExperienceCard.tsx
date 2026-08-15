@@ -36,7 +36,7 @@ const ExperienceCard: React.FC<ExperienceCardProps> = ({
                 </div>
                 <p
                     className={styles.rightSection}
-                >{`${gpa > 0 ? `${gpa} GPA` : ""}`}</p>
+                >{`${gpa > 0 ? `${gpa.toFixed(2)} GPA` : ""}`}</p>
             </div>
             <div className={styles.educationBody}>
                 {keyCourses && keyCourses.length > 0 && (
