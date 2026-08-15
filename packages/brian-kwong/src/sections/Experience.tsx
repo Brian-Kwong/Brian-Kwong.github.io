@@ -12,7 +12,7 @@ const Experience: React.FC = () => {
                 {experienceData.map((exp, index) => (
                     <ExperienceCard
                         key={index}
-                        location={`${exp.company} ${exp.location}`}
+                        location={`${exp.company}, ${exp.location}`}
                         from={exp.from}
                         to={exp.to}
                         position={exp.title}
