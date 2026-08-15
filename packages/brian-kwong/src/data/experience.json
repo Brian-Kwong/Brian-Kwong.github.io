@@ -1,10 +1,28 @@
 [
+        {
+        "title": "Application Developer Intern",
+        "company": "Los Angeles Dodgers",
+        "location": "Los Angeles CA",
+        "from": "Mar. 2026",
+        "to": "Aug. 2026",
+        "keySkills": [
+            "Python",
+            "Salesforce CRM & Apex",
+            "HTML/CSS",
+            "Typescript",
+            "React & LWC",
+            "BigQuery, SQL Server, DuckDB",
+            "Microservices",
+            "Google Cloud Platform"
+        ],
+        "icon": "Design"
+    },
     {
         "title": "UI/UX Designer & Developer",
         "company": "Hack4Impact",
         "location": "CalPoly SLO",
-        "from": "Sep 2023",
-        "to": "Jun 2025",
+        "from": "Sep. 2023",
+        "to": "Jun. 2025",
         "keySkills": [
             "Figma",
             "User Research",
@@ -19,8 +37,8 @@
         "title": "Teaching Assistant",
         "company": "CPE Department",
         "location": "CalPoly SLO",
-        "from": "Jan 2025",
-        "to": "Jun 2025",
+        "from": "Jan. 2025",
+        "to": "Jun. 2025",
         "keySkills": [
             "Network Concepts",
             "Systems Design & Programming",
